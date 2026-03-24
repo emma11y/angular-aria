@@ -1,0 +1,156 @@
+@use 'font';
+
+:root {
+  --main-family: 'Luciole', Helvetica, Arial, sans-serif;
+}
+
+:root,
+[data-selected-theme='dark'] {
+  --bg-color: #222222;
+  --color: #fafafa;
+  --color-primary: #89c4f4;
+  --color-secondary: #f29292;
+}
+
+[data-selected-theme='light'] {
+  --bg-color: #fafafa;
+  --color: #333329;
+  --color-primary: #2653a6;
+  --color-secondary: #d33b3b;
+}
+
+html {
+  font-family: var(--main-family);
+  background-color: var(--bg-color);
+  color: var(--color);
+  min-height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 20px;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+* {
+  outline: none;
+}
+
+h1 {
+  font-size: 2.3em;
+  color: var(--color);
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+h3,
+h4,
+h6 {
+  color: var(--color);
+}
+
+a.button,
+button {
+  background-color: var(--bg-color);
+  border: 0.1rem solid var(--color-primary);
+  color: var(--color-primary);
+  cursor: pointer;
+  width: 10em;
+  padding: 0.5em 1em;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  font-family: var(--main-family);
+  font-size: 1em;
+
+  &:focus-visible,
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+}
+
+a.button {
+  text-decoration: none;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+
+  &.active {
+    text-decoration-thickness: 0.2em;
+    text-decoration-line: underline;
+    text-decoration-style: unset;
+    text-underline-offset: 0.5em;
+    text-decoration-color: var(--color-secondary);
+  }
+
+  &:focus-visible,
+  &:hover {
+    text-decoration-thickness: 0.2em;
+    text-decoration-line: underline;
+    text-decoration-style: unset;
+    text-underline-offset: 0.5em;
+    text-decoration-color: var(--color-primary);
+  }
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+}
+
+.font {
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+.mt {
+  &-2 {
+    margin-top: 2em;
+  }
+  &-3 {
+    margin-top: 3em;
+  }
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+  border: none;
+
+  legend {
+    margin-bottom: 2em;
+    color: var(--color);
+  }
+}

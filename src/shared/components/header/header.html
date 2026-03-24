@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="banner">
+    <div class="title">
+      <h1>Comment utiliser Angular ARIA ?</h1>
+    </div>
+    <div class="theme-switcher">
+      <fieldset>
+        <legend class="sr-only">Choisir votre thème d'affichage</legend>
+        <div class="theme-switcher-buttons">
+          @for (theme of themes; track $index) {
+            <button
+              type="button"
+              [attr.data-theme]="theme.id"
+              [attr.aria-pressed]="themeSelected == theme.id"
+              (click)="onThemeClick(theme)"
+            >
+              <i [class]="theme.icon" aria-hidden="true"></i>
+
+              @if (themeSelected == theme.id) {
+                <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+              }
+              <span class="sr-only">{{ theme.title }}</span>
+            </button>
+          }
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <nav role="navigation">
+    <ul>
+      <li>
+        <app-nav-item link="/" title="Accueil" />
+      </li>
+      <li>
+        <app-nav-item link="/a-propos" title="A propos" />
+      </li>
+    </ul>
+  </nav>
+</header>

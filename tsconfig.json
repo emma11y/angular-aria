@@ -1,0 +1,54 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@environments/*": ["./src/environments/*"],
+      "@settings/*": ["./src/settings/*"],
+      "@core/*": ["./src/core/*"],
+      "@guards/*": ["./src/core/guards/*"],
+      "@interceptors/*": ["./src/core/interceptors/*"],
+      "@resolvers/*": ["./src/core/resolvers/*"],
+      "@serializer/*": ["./src/core/serializer/*"],
+      "@services/*": ["./src/core/services/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@components/*": ["./src/shared/components/*"],
+      "@directives/*": ["./src/shared/directives/*"],
+      "@dtos/*": ["./src/shared/dtos/*"],
+      "@models/*": ["./src/shared/models/*"],
+      "@enums/*": ["./src/shared/enums/*"],
+      "@pipes/*": ["./src/shared/pipes/*"],
+      "@utilities/*": ["./src/shared/utilities/*"],
+      "@referentiels/*": ["./src/assets/referentiels/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}
