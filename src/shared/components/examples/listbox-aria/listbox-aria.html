@@ -1,0 +1,35 @@
+<div class="listbox-aria">
+  <label for="combobox">Sélectionner votre couleur favorite</label>
+
+  <div ngCombobox readonly>
+    <div #origin class="select">
+      <input id="combobox" ngComboboxInput />
+      <span class="example-arrow material-symbols-outlined" translate="no" aria-hidden="true">
+        <i class="fa-solid fa-chevron-down"></i
+      ></span>
+    </div>
+    <ng-template ngComboboxPopupContainer>
+      <ng-template
+        [cdkConnectedOverlay]="{ origin, usePopover: 'inline', matchWidth: true }"
+        [cdkConnectedOverlayOpen]="true"
+      >
+        <div class="example-popup-container">
+          <div ngListbox>
+            @for (item of items; track item.id) {
+              <div ngOption [value]="item.id" [label]="item.label">
+                <span class="example-option-text">{{ item.label }}</span>
+                <span
+                  class="example-option-check material-symbols-outlined"
+                  translate="no"
+                  aria-hidden="true"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+              </div>
+            }
+          </div>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+  <p>{{ displayValue() }}</p>
+</div>

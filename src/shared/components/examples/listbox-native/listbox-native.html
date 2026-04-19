@@ -1,0 +1,15 @@
+<div class="listbox-native">
+  <label for="native">Sélectionner votre couleur favorite</label>
+  <select id="native" name="native" [value]="selectedItemId()" (change)="onSelectionChange($event)">
+    <option value=""></option>
+    @for (item of items(); track item.id) {
+      <option [value]="item.id">{{ item.label }}</option>
+    }
+  </select>
+
+  @if (selectedItem(); as item) {
+    <p>Valeur sélectionnée : {{ item.label }}</p>
+  } @else {
+    <p>Aucune valeur sélectionnée</p>
+  }
+</div>

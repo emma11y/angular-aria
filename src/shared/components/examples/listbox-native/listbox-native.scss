@@ -1,0 +1,32 @@
+.listbox-native {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 1em;
+  }
+
+  select {
+    font-family: var(--main-family);
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: var(--bg-color);
+    color: var(--color);
+    border-radius: 0.5rem;
+    border: 0.1em solid var(--color);
+
+    &:focus {
+      border: 0.1em solid var(--color-secondary);
+    }
+
+    option {
+      padding: 1em;
+      margin: 1em;
+
+      &:checked {
+        background-color: var(--color-secondary);
+        color: var(--bg-color);
+      }
+    }
+  }
+}

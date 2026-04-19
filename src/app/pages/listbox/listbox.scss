@@ -1,0 +1,83 @@
+.listbox {
+  [ngTabs] {
+    margin: auto;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 0.1em solid color-mix(in srgb, var(--color) 10%, transparent);
+  }
+
+  [ngTabList] {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    position: relative;
+    border-bottom: 0.1em solid color-mix(in srgb, var(--color) 10%, transparent);
+
+    &:has([ngTab]:nth-child(1)[aria-selected='true']) ~ .sliding-window {
+      transform: translateX(0%);
+    }
+
+    &:has([ngTab]:nth-child(2)[aria-selected='true']) ~ .sliding-window {
+      transform: translateX(-25%);
+    }
+
+    &:has([ngTab]:nth-child(3)[aria-selected='true']) ~ .sliding-window {
+      transform: translateX(-50%);
+    }
+
+    &:has([ngTab]:nth-child(4)[aria-selected='true']) ~ .sliding-window {
+      transform: translateX(-75%);
+    }
+  }
+
+  [ngTab] {
+    flex: 1;
+    outline: none;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    text-align: center;
+    color: var(--color);
+    align-content: center;
+
+    &[aria-selected='true'] {
+      color: var(--bg-color);
+      background-color: var(--color-primary);
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &:focus-visible {
+      outline-offset: -0.5em;
+      outline: 0.25em solid var(--bg-color);
+    }
+
+    &:hover {
+      background-color: var(--color-secondary);
+      color: var(--bg-color);
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  .sliding-window {
+    width: 400%;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+  }
+
+  [ngTabPanel] {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    min-height: 100px;
+    flex: 1;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+    &:focus {
+      outline-offset: -4px;
+      border-radius: 0.5rem;
+      outline: 2px solid var(--color-primary);
+    }
+  }
+}

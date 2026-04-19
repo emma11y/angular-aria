@@ -1,0 +1,28 @@
+<div class="listbox">
+  <h2>Exemples de listes déroulantes</h2>
+
+  <div ngTabs>
+    <div ngTabList selectionMode="follow" selectedTab="no-ally">
+      <div ngTab value="no-ally">Non accessible</div>
+      <div ngTab value="custom-a11y">Accessible sur mesure</div>
+      <div ngTab value="aria">Accessible avec Angular ARIA</div>
+      <div ngTab value="native">Accessible nativement</div>
+    </div>
+    <div class="sliding-window">
+      <div ngTabPanel [preserveContent]="true" value="no-ally">
+        <ng-template ngTabContent>Panel 1</ng-template>
+      </div>
+      <div ngTabPanel [preserveContent]="true" value="custom-a11y">
+        <ng-template ngTabContent>Panel 2</ng-template>
+      </div>
+      <div ngTabPanel [preserveContent]="true" value="aria">
+        <ng-template ngTabContent><listbox-aria [items]="items"></listbox-aria></ng-template>
+      </div>
+      <div ngTabPanel [preserveContent]="true" value="native">
+        <ng-template ngTabContent>
+          <listbox-native [items]="items"></listbox-native>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
