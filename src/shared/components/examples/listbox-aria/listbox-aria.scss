@@ -50,7 +50,7 @@
   .example-popup-container {
     width: 100%;
     padding: 0.5rem;
-    margin-top: 8px;
+    margin-top: 0.5em;
     border-radius: 0.5rem;
     background-color: var(--bg-color);
     font-size: 0.9rem;
@@ -61,6 +61,8 @@
       max-height 150ms ease-out,
       visibility 0s,
       opacity 25ms ease-out;
+
+    border: 0.15em solid var(--color);
   }
   [ngListbox] {
     gap: 2px;
@@ -89,6 +91,7 @@
     padding: 0 1rem;
     min-height: 2.25rem;
     border-radius: 0.5rem;
+    margin-right: 0.5em;
 
     &:hover {
       color: var(--bg-color);

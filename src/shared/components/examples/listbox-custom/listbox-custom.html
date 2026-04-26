@@ -1,0 +1,50 @@
+<div class="listbox-custom">
+  <label for="custom" id="combo-label">Sélectionner votre couleur favorite</label>
+  <div class="combo" [class]="{ open: isComboboxOpen }">
+    <div
+      aria-controls="custom"
+      [attr.aria-expanded]="isComboboxOpen"
+      aria-haspopup="listbox"
+      aria-labelledby="combo-label"
+      id="custom"
+      class="combo-input"
+      role="combobox"
+      tabindex="0"
+      (click)="isComboboxOpen = !isComboboxOpen"
+      (blur)="onComboboxBlur($event)"
+      (keydown)="onComboboxKeyDown($event)"
+      [attr.aria-activedescendant]="isComboboxOpen ? 'listbox-custom-' + activeIndex() : ''"
+    >
+      {{ selectedItem()?.label }}
+    </div>
+    <div
+      class="combo-menu"
+      role="listbox"
+      id="custom"
+      tabindex="-1"
+      (mousedown)="$event.preventDefault()"
+      #listboxEl
+    >
+      @for (item of items; track item.id; let index = $index) {
+        <div
+          role="option"
+          class="combo-option"
+          [id]="'listbox-custom-' + index"
+          (click)="onOptionClick(index)"
+          [class]="{ active: item.active }"
+          [attr.aria-selected]="item.id === selectedItemId()"
+          [attr.aria-setsize]="items.length"
+          [attr.aria-posinset]="index + 1"
+        >
+          {{ item.label }}
+        </div>
+      }
+    </div>
+  </div>
+
+  @if (selectedItem(); as item) {
+    <p>Valeur sélectionnée : {{ item.label }}</p>
+  } @else {
+    <p>Aucune valeur sélectionnée</p>
+  }
+</div>

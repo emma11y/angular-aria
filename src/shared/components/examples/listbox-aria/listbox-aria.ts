@@ -18,6 +18,8 @@ import {
 } from '@angular/core';
 import { Item } from '@shared/models/item';
 
+// based on https://angular.dev/guide/aria/overview
+
 @Component({
   selector: 'listbox-aria',
   imports: [

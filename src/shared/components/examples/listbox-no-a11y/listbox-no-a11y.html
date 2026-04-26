@@ -1,0 +1,26 @@
+<div class="listbox-no-a11y">
+  <label for="no-a11y">Sélectionner votre couleur favorite</label>
+  <div class="combo" [class]="{ open: isComboboxOpen }">
+    <div class="combo-input" (click)="isComboboxOpen = !isComboboxOpen">
+      {{ selectedItem()?.label }}
+    </div>
+    <div class="combo-menu" id="no-a11y">
+      @for (item of items; track item.id; let index = $index) {
+        <div
+          class="combo-option"
+          [id]="'listbox-' + index"
+          (click)="onOptionClick(item.id)"
+          [class]="{ active: item.id === selectedItemId() }"
+        >
+          {{ item.label }}
+        </div>
+      }
+    </div>
+  </div>
+
+  @if (selectedItem(); as item) {
+    <p>Valeur sélectionnée : {{ item.label }}</p>
+  } @else {
+    <p>Aucune valeur sélectionnée</p>
+  }
+</div>

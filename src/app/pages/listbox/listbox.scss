@@ -1,7 +1,7 @@
 .listbox {
   [ngTabs] {
     margin: auto;
-    overflow: hidden;
+    overflow-x: clip;
     border-radius: 0.5rem;
     border: 0.1em solid color-mix(in srgb, var(--color) 10%, transparent);
   }

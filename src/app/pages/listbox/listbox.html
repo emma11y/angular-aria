@@ -10,10 +10,10 @@
     </div>
     <div class="sliding-window">
       <div ngTabPanel [preserveContent]="true" value="no-ally">
-        <ng-template ngTabContent>Panel 1</ng-template>
+        <ng-template ngTabContent><listbox-no-a11y [items]="items"></listbox-no-a11y></ng-template>
       </div>
       <div ngTabPanel [preserveContent]="true" value="custom-a11y">
-        <ng-template ngTabContent>Panel 2</ng-template>
+        <ng-template ngTabContent><listbox-custom [items]="items"></listbox-custom></ng-template>
       </div>
       <div ngTabPanel [preserveContent]="true" value="aria">
         <ng-template ngTabContent><listbox-aria [items]="items"></listbox-aria></ng-template>
