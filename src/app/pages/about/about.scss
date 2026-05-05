@@ -86,4 +86,37 @@
       }
     }
   }
+
+  .thanks {
+    margin: auto;
+    text-align: center;
+    margin-top: 5em;
+
+    p:first-child {
+      font-size: 180%;
+    }
+
+    .qr-codes {
+      display: flex;
+      flex-direction: row;
+      margin: auto 2em;
+      justify-content: center;
+
+      @media screen and (max-width: 659px) {
+        flex-flow: wrap;
+      }
+
+      div {
+        margin: 0 1em;
+
+        img {
+          width: 15vw;
+
+          @media screen and (max-width: 659px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
