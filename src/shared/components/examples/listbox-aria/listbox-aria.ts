@@ -52,9 +52,9 @@ export class ListboxAria {
 
     const selectedItem = this.items.find((item) => item.id === values[0]) ?? null;
 
-    return selectedItem
-      ? `Valeur sélectionnée : ${selectedItem.label}`
-      : 'Aucune valeur sélectionnée';
+    return selectedItem?.label;
+    /* ? `Valeur sélectionnée : ${selectedItem.label}`
+      : 'Aucune valeur sélectionnée';*/
   });
 
   constructor() {
